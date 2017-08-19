@@ -1,9 +1,9 @@
 ﻿export interface IUser {
     id: number;
     name: string;
-    avatar: string;
-    profession: string;
-    schedulesCreated: number;
+   // avatar: string;
+    email: string;
+    //schedulesCreated: number;
 }
 
 export interface ISchedule {

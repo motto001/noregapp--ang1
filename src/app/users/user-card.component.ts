@@ -171,7 +171,7 @@ export class UserCardComponent implements OnInit {
 
     isUserValid(): boolean {
         return !(this.edittedUser.name.trim() === "")
-            && !(this.edittedUser.profession.trim() === "");
+            ;
     }
 
 }
