@@ -14,6 +14,9 @@ import { HighlightDirective } from '../shared/directives/highlight.directive';
 
 import { ModalDirective } from 'ngx-bootstrap';
 
+
+
+
 @Component({
     moduleId: module.id,
     selector: 'user-card',

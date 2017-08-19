@@ -4,6 +4,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule }    from '@angular/http';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PaginationModule } from 'ngx-bootstrap';
@@ -32,6 +33,9 @@ import { NotificationService } from './shared/utils/notification.service';
 import { UrlSerializer } from '@angular/router';
 import { LowerCaseUrlSerializer } from './shared/utils/lower-case-url-serializer';
 
+//import { Globals} from './shared/utils/globals';
+import { LoggedComponent} from './Logged/logged.component';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -55,7 +59,8 @@ import { LowerCaseUrlSerializer } from './shared/utils/lower-case-url-serializer
         ScheduleListComponent,
         SlimLoadingBarComponent,
         UserCardComponent,
-        UserListComponent
+        UserListComponent,
+        LoggedComponent
     ],
     providers: [
         ConfigService,

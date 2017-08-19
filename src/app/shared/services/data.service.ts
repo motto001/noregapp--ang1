@@ -6,7 +6,8 @@ import {Observer} from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { IUser, ISchedule, IScheduleDetails, Pagination, PaginatedResult } from '../interfaces';
+
+import { IUser,IGlobal, ISchedule, IScheduleDetails, Pagination, PaginatedResult } from '../interfaces';
 import { ItemsService } from '../utils/items.service';
 import { ConfigService } from '../utils/config.service';
 
@@ -14,23 +15,36 @@ import { ConfigService } from '../utils/config.service';
 export class DataService {
 
     _baseUrl: string = '';
+     _baseHost: string = '';
 
     constructor(private http: Http,
         private itemsService: ItemsService,
         private configService: ConfigService) {
         this._baseUrl = configService.getApiURI();
+        this._baseHost = configService.getApiHost();
     }
 
     getUsers(): Observable<IUser[]> {
         return this.http.get(this._baseUrl + 'users')
             .map((res: Response) => {
                 //return res.json(); eredeti
-                  res=  res.json();
-                return res.data;
+                 var res2=  res.json();
+                return res2.data;
             })
             .catch(this.handleError);
     }
+    getGlobals():Observable<IGlobal> {
+            
+        return this.http.get('http://localhost:8000/cors/global')
+            .map((res: Response) => {
+           //  var res3=  res.json();
+          //  console.log(res3.user.name);
+                return res.json();
 
+            })
+            .catch(this.handleError);
+           // return 'getglobals';
+    }
     getUserSchedules(id: number): Observable<ISchedule[]> {
         return this.http.get(this._baseUrl + 'users/' + id + '/schedules')
             .map((res: Response) => {

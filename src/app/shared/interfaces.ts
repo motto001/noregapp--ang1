@@ -1,11 +1,15 @@
 ﻿export interface IUser {
-    id: number;
+   id: number;
     name: string;
    // avatar: string;
     email: string;
     //schedulesCreated: number;
 }
-
+export interface IGlobal {
+    user: any;
+    role: any;
+   
+}
 export interface ISchedule {
      id: number;
      title: string;

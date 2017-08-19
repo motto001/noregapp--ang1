@@ -17,6 +17,6 @@ export class ConfigService {
      }
    
      getApiHost() {
-         return this._apiURI.replace('cors/','');
+         return this._host;
      }
 }
